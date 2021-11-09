@@ -1,4 +1,6 @@
 ﻿using DSharpPlus;
+using EventHandler;
+using Microsoft.Extensions.Logging;
 using System;
 using System.IO;
 using System.Text.Json;
@@ -34,8 +36,17 @@ namespace Discord_Bot {
             var discord = new DiscordClient(new DiscordConfiguration() {
                 Token = _discordConfig.token,
                 TokenType = TokenType.Bot,
-                Intents = DiscordIntents.AllUnprivileged
+                Intents = DiscordIntents.AllUnprivileged,
+                MinimumLogLevel = LogLevel.Debug,
+                LogTimestampFormat = "MMM dd yyyy - hh:mm:ss tt"
             });
+
+            //Set up event handling
+            EventGuildMember _eGuildMember = new EventGuildMember(discord);
+            EventMessageHandler _eMessageHandler = new EventMessageHandler(discord);
+
+            discord.MessageCreated += _eMessageHandler.MessageCreatedHandler;
+            discord.GuildMemberAdded += _eGuildMember.MemberAddedHandler;
 
             await discord.ConnectAsync();
             await Task.Delay(-1);
