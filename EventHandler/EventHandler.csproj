@@ -13,4 +13,8 @@
     <PackageReference Include="DSharpPlus.VoiceNext.Natives" Version="1.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FileHandler\FileHandler.csproj" />
+  </ItemGroup>
+
 </Project>

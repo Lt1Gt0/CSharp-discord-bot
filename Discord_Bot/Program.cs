@@ -1,14 +1,17 @@
 ﻿using DSharpPlus;
 using EventHandler;
+using FileHandler;
 using Microsoft.Extensions.Logging;
 using System;
 using System.IO;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Discord_Bot {
-    public class DiscordConfig {
+    // Declare what will be parsed from the config file
+    
+    /*
+    public class DiscordConfig { 
         [JsonInclude]
         public string token { get; set; }
         [JsonInclude]
@@ -16,21 +19,26 @@ namespace Discord_Bot {
         [JsonInclude]
         public string command_prefix { get; set; }
     }
-
+    */
     public class Program {
 
+        //Path to config file
         private static string _configFile = "config.json";
+        
+        //Non async main method
         static void Main(string[] args) {
-            MainAsync().GetAwaiter().GetResult();
+            MainAsync().GetAwaiter().GetResult(); //Call the async main method and get the result
             Console.ReadLine();
         }
         static async Task MainAsync() {
             var options = new JsonSerializerOptions {
                 IncludeFields = true,
             };
+
+            //Open the filestream to read the config file
             using FileStream openStream = File.OpenRead(_configFile);
-            DiscordConfig _discordConfig = 
-                await JsonSerializer.DeserializeAsync<DiscordConfig>(openStream, options);
+            ConfigHandler _discordConfig = 
+                await JsonSerializer.DeserializeAsync<ConfigHandler>(openStream, options);
 
             //Set up the discord client
             var discord = new DiscordClient(new DiscordConfiguration() {
@@ -42,13 +50,15 @@ namespace Discord_Bot {
             });
 
             //Set up event handling
-            EventGuildMember _eGuildMember = new EventGuildMember(discord);
-            EventMessageHandler _eMessageHandler = new EventMessageHandler(discord);
+            EventGuildMember _eGuildMember = new EventGuildMember(discord, _configFile);
+            EventMessageHandler _eMessageHandler = new EventMessageHandler(discord, _configFile);
+
+            //Set up command handling
 
             discord.MessageCreated += _eMessageHandler.MessageCreatedHandler;
             discord.GuildMemberAdded += _eGuildMember.MemberAddedHandler;
 
-            await discord.ConnectAsync();
+            await discord.ConnectAsync(); //Connect the bot
             await Task.Delay(-1);
         }
     }
