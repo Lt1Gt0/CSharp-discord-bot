@@ -8,6 +8,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventHandler", "..\EventHandler\EventHandler.csproj", "{3623B272-243E-48B1-B305-18479D4EC2B0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandHandler", "..\CommandHandler\CommandHandler.csproj", "{BE1147B8-2168-44C6-A34E-0FDD6F7E3B91}"
+	ProjectSection(ProjectDependencies) = postProject
+		{76ABEDE2-8FBA-4F82-B455-3EFBC62398E0} = {76ABEDE2-8FBA-4F82-B455-3EFBC62398E0}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileHandler", "..\FileHandler\FileHandler.csproj", "{76ABEDE2-8FBA-4F82-B455-3EFBC62398E0}"
 EndProject

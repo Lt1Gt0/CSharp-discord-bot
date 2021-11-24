@@ -1,11 +1,12 @@
 ﻿using DSharpPlus;
+using DSharpPlus.CommandsNext;
+using DSharpPlus.Entities;
+using System.Threading.Tasks;
 
 namespace CommandHandler
 {
-    public class CommandLEDControl : CommandHandlerBase
+    public class CommandLEDControl : BaseCommandModule
     {
-        public CommandLEDControl(DiscordClient _client, string _configFile) : base(_client, _configFile) {
-
-        }
+        
     }
 }

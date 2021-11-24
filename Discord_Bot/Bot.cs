@@ -1,4 +1,6 @@
-﻿using DSharpPlus;
+﻿using CommandHandler;
+using DSharpPlus;
+using DSharpPlus.CommandsNext;
 using EventHandler;
 using FileHandler;
 using Microsoft.Extensions.Logging;
@@ -36,12 +38,16 @@ namespace Discord_Bot {
                 MinimumLogLevel = LogLevel.Debug,
                 LogTimestampFormat = "MMM dd yyyy - hh:mm:ss tt"
             });
+            var commands = discord.UseCommandsNext(new CommandsNextConfiguration() {
+                StringPrefixes = new[] { _discordConfig.command_prefix }
+            });
 
             //Set up event handling
             EventGuildMember _eGuildMember = new EventGuildMember(discord, _configFile);
             EventMessageHandler _eMessageHandler = new EventMessageHandler(discord, _configFile);
 
             //Set up command handling
+            commands.RegisterCommands<CommandGreet>();
 
             discord.MessageCreated += _eMessageHandler.MessageCreatedHandler;
             discord.GuildMemberAdded += _eGuildMember.MemberAddedHandler;
