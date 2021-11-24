@@ -78,6 +78,12 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UserLibrary\UserLibrary.csproj">
+      <Project>{1FAA2A7A-CFC5-45C6-91A8-C31CB2343609}</Project>
+      <Name>UserLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\Discord_Bot\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\Discord_Bot\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

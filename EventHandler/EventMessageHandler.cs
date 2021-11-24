@@ -25,7 +25,7 @@ namespace EventHandler {
             ConfigHandler _discordConfig =
                 await JsonSerializer.DeserializeAsync<ConfigHandler>(openStream, options);
 
-            if (e.Guild?.Id == 906664701214195712) {
+            if (e.Guild?.Id == _discordConfig.led_channel_text_id) {
                 await e.Message.DeleteAsync();
             }
         }
