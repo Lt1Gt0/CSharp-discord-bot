@@ -6,13 +6,8 @@ using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace EventHandler {
-    public class EventMessageHandler {
-        //int testTextChannelGuildId =
-        private static DiscordClient discord;
-        private static string configFile;
-        public EventMessageHandler(DiscordClient _discord, string _configFile) {
-            discord = _discord;
-            configFile = _configFile;
+    public class EventMessageHandler : EventHandlerBase{
+        public EventMessageHandler(DiscordClient _discord, string _configFile) : base(_discord, _configFile) {
         }
 
         public async Task MessageCreatedHandler(DiscordClient s, MessageCreateEventArgs e) {

@@ -8,19 +8,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Discord_Bot {
-    // Declare what will be parsed from the config file
-    
-    /*
-    public class DiscordConfig { 
-        [JsonInclude]
-        public string token { get; set; }
-        [JsonInclude]
-        public string client_secret { get; set; }
-        [JsonInclude]
-        public string command_prefix { get; set; }
-    }
-    */
-    public class Program {
+    public class Bot {
 
         //Path to config file
         private static string _configFile = "config.json";
