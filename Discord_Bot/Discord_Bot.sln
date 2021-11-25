@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Discord_Bot", "Discord_Bot.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventHandler", "..\EventHandler\EventHandler.csproj", "{3623B272-243E-48B1-B305-18479D4EC2B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandHandler", "..\CommandHandler\CommandHandler.csproj", "{BE1147B8-2168-44C6-A34E-0FDD6F7E3B91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandHandler", "..\CommandHandler\CommandHandler.csproj", "{BE1147B8-2168-44C6-A34E-0FDD6F7E3B91}"
 	ProjectSection(ProjectDependencies) = postProject
 		{76ABEDE2-8FBA-4F82-B455-3EFBC62398E0} = {76ABEDE2-8FBA-4F82-B455-3EFBC62398E0}
 	EndProjectSection
@@ -15,6 +15,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileHandler", "..\FileHandler\FileHandler.csproj", "{76ABEDE2-8FBA-4F82-B455-3EFBC62398E0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserLibrary", "..\UserLibrary\UserLibrary.csproj", "{1FAA2A7A-CFC5-45C6-91A8-C31CB2343609}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BluetoothHandler", "..\BluetoothHandler\BluetoothHandler.csproj", "{440145DE-3823-48FC-A91E-68A2F7B4E215}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +44,10 @@ Global
 		{1FAA2A7A-CFC5-45C6-91A8-C31CB2343609}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FAA2A7A-CFC5-45C6-91A8-C31CB2343609}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FAA2A7A-CFC5-45C6-91A8-C31CB2343609}.Release|Any CPU.Build.0 = Release|Any CPU
+		{440145DE-3823-48FC-A91E-68A2F7B4E215}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{440145DE-3823-48FC-A91E-68A2F7B4E215}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{440145DE-3823-48FC-A91E-68A2F7B4E215}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{440145DE-3823-48FC-A91E-68A2F7B4E215}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

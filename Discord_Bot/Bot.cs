@@ -13,7 +13,7 @@ namespace Discord_Bot {
     public class Bot {
 
         //Path to config file
-        private static string _configFile = "config.json";
+        private const string _configFile = "config.json";
         
         //Non async main method
         static void Main(string[] args) {
@@ -48,6 +48,7 @@ namespace Discord_Bot {
 
             //Set up command handling
             commands.RegisterCommands<CommandGreet>();
+            commands.RegisterCommands<CommandLEDControl>();
 
             discord.MessageCreated += _eMessageHandler.MessageCreatedHandler;
             discord.GuildMemberAdded += _eGuildMember.MemberAddedHandler;

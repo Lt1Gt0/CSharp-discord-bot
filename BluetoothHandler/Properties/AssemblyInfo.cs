@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("CommandHandler")]
+[assembly: AssemblyTitle("BluetoothHandler")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CommandHandler")]
+[assembly: AssemblyProduct("BluetoothHandler")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("be1147b8-2168-44c6-a34e-0fdd6f7e3b91")]
+[assembly: Guid("440145de-3823-48fc-a91e-68a2f7b4e215")]
 
 // Version information for an assembly consists of the following four values:
 //
